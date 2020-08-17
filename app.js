@@ -10,8 +10,8 @@ const handler = (request, response) => {
   const clientIp = request.connection.remoteAddress;
   console.log('Received request for', request.url, 'from', clientIp);
   response.writeHead(200);
-  response.write('Hey there, this is', os.hostname(), '.');
-  response.write('Your IP is', clientIp, '.');
+  response.write(`Hey there, this is: ${os.hostname()}\n`);
+  response.write(`Client ip is: ${clientIp}`);
   response.end('\n');
 }
 
